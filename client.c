@@ -2,6 +2,8 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <string.h>
+#include <arpa/inet.h>
+#include <unistd.h>
 
 int main(){
   int clientSocket;
@@ -17,9 +19,9 @@ int main(){
   /* Address family = Internet */
   serverAddr.sin_family = AF_INET;
   /* Set port number, using htons function to use proper byte order */
-  serverAddr.sin_port = htons(7891);
+  serverAddr.sin_port = htons(5000);
   /* Set IP address to localhost */
-  serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+  serverAddr.sin_addr.s_addr = inet_addr("10.0.2.15");
   /* Set all bits of the padding field to 0 */
   memset(serverAddr.sin_zero, '\0', sizeof serverAddr.sin_zero);  
 
