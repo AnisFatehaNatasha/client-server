@@ -11,7 +11,7 @@ public class server
     private DataInputStream in       =  null; 
   
     // constructor with port 
-    public Server(int port) 
+    public server(int port) 
     { 
         // starts server and waits for a connection 
         try
